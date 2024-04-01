@@ -1,59 +1,58 @@
-import React from 'react';
-import FontAwesome from '@expo/vector-icons/FontAwesome';
-import { Link, Tabs } from 'expo-router';
-import { Pressable } from 'react-native';
+import React from 'react'
+import { Link, Tabs, useRouter } from 'expo-router'
+import { Ionicons, MaterialCommunityIcons } from '@expo/vector-icons'
+import { TouchableOpacity } from 'react-native';
 
-import Colors from '@/constants/Colors';
-import { useColorScheme } from '@/components/useColorScheme';
-import { useClientOnlyValue } from '@/components/useClientOnlyValue';
-
-// You can explore the built-in icon families and icons on the web at https://icons.expo.fyi/
-function TabBarIcon(props: {
-  name: React.ComponentProps<typeof FontAwesome>['name'];
-  color: string;
-}) {
-  return <FontAwesome size={28} style={{ marginBottom: -3 }} {...props} />;
-}
-
-export default function TabLayout() {
-  const colorScheme = useColorScheme();
-
+const _layout = () => {
+  const router = useRouter();
   return (
-    <Tabs
-      screenOptions={{
-        tabBarActiveTintColor: Colors[colorScheme ?? 'light'].tint,
-        // Disable the static render of the header on web
-        // to prevent a hydration error in React Navigation v6.
-        headerShown: useClientOnlyValue(false, true),
-      }}>
-      <Tabs.Screen
-        name="index"
-        options={{
-          title: 'Tab One',
-          tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
-          headerRight: () => (
-            <Link href="/modal" asChild>
-              <Pressable>
-                {({ pressed }) => (
-                  <FontAwesome
-                    name="info-circle"
-                    size={25}
-                    color={Colors[colorScheme ?? 'light'].text}
-                    style={{ marginRight: 15, opacity: pressed ? 0.5 : 1 }}
-                  />
-                )}
-              </Pressable>
-            </Link>
-          ),
-        }}
-      />
-      <Tabs.Screen
-        name="two"
-        options={{
-          title: 'Tab Two',
-          tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
-        }}
-      />
+    <Tabs screenOptions={{
+      tabBarActiveTintColor: 'black',
+    }}>
+      <Tabs.Screen name='index' options={{
+        tabBarLabel: 'Home',
+        headerShown: false,
+        tabBarIcon: ({focused, color, size}) => {
+          return <Ionicons name={focused ? 'home' : 'home-outline'} color={color} size={size} />
+        }
+      }}/>
+      <Tabs.Screen name='market' options={{
+        tabBarLabel: 'Market',
+        headerShown: false,
+        tabBarIcon: ({focused, color, size}) => {
+          return <MaterialCommunityIcons name={focused ? 'coffee' : 'coffee-outline'} color={color} size={size} />
+        }
+      }}/>
+      <Tabs.Screen name='camera' options={{
+        headerTitle: 'Camera',
+        tabBarLabel: 'Camera',
+        tabBarIcon: ({focused, color, size}) => {
+          return <Ionicons name={focused ? 'camera' : 'camera-outline'} color={color} size={size} />
+        }
+      }}/>
+      <Tabs.Screen name='gemini' options={{
+        headerTitle: 'Gemini AI',
+        tabBarLabel: 'Gemini',
+        tabBarIcon: ({focused, color, size}) => {
+          return <MaterialCommunityIcons name={focused ? 'account-question' : 'account-question-outline'} color={color} size={size} />
+        }
+      }}/>
+      <Tabs.Screen name='user' options={{
+        headerTitle: 'User profile',
+        tabBarLabel: 'User',
+        tabBarIcon: ({focused, color, size}) => {
+          return <Ionicons name={focused ? 'person' : 'person-outline'} color={color} size={size} />
+        },
+        headerRight: () => {
+          return (
+            <TouchableOpacity style={{marginRight: 10}} onPress={() => router.push('/settings/')}>
+              <Ionicons name='settings-outline' size={24}/>
+            </TouchableOpacity>
+          )
+        },
+      }}/>
     </Tabs>
-  );
+  )
 }
+
+export default _layout

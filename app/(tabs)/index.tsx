@@ -1,31 +1,26 @@
-import { StyleSheet } from 'react-native';
+import { View, Text, Button } from 'react-native'
+import React from 'react'
+import AdsCarousel from '@/components/carousels/AdsCarousel'
 
-import EditScreenInfo from '@/components/EditScreenInfo';
-import { Text, View } from '@/components/Themed';
-
-export default function TabOneScreen() {
+const Page = () => {
   return (
-    <View style={styles.container}>
-      <Text style={styles.title}>Tab One</Text>
-      <View style={styles.separator} lightColor="#eee" darkColor="rgba(255,255,255,0.1)" />
-      <EditScreenInfo path="app/(tabs)/index.tsx" />
+    <View style={{marginTop: 64}}>
+      <Text style={{fontSize: 20, fontWeight: '600', marginHorizontal: 10, marginBottom: 10, textAlign: 'center'}}>MrBean - All Effort for Greenier Days</Text>
+      <AdsCarousel />
+      <View style={{backgroundColor: '#18181B', marginHorizontal: 10, marginVertical: 5, borderRadius: 8}}>
+        <Button title="Give beans" color={'white'}/>
+      </View>
+      <View style={{backgroundColor: '#18181B', marginHorizontal: 10, marginVertical: 5, borderRadius: 8}}>
+        <Button title="View beans" color={'white'}/>
+      </View>
+      <View style={{backgroundColor: '#18181B', marginHorizontal: 10, marginVertical: 5, borderRadius: 8}}>
+        <Button title="Smart beans" color={'white'}/>
+      </View>
+      <View style={{backgroundColor: '#18181B', marginHorizontal: 10, marginVertical: 5, borderRadius: 8}}>
+        <Button title="Capture beans" color={'white'}/>
+      </View>
     </View>
-  );
+  )
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  title: {
-    fontSize: 20,
-    fontWeight: 'bold',
-  },
-  separator: {
-    marginVertical: 30,
-    height: 1,
-    width: '80%',
-  },
-});
+export default Page

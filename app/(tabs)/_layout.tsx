@@ -1,13 +1,17 @@
 import React from 'react'
 import { Link, Tabs, useRouter } from 'expo-router'
 import { Ionicons, MaterialCommunityIcons } from '@expo/vector-icons'
-import { TouchableOpacity } from 'react-native';
+import { TouchableOpacity, View } from 'react-native';
 
 const _layout = () => {
   const router = useRouter();
   return (
     <Tabs screenOptions={{
       tabBarActiveTintColor: 'black',
+      tabBarStyle: {
+        borderTopColor: 'black',
+        borderTopWidth: 2,
+      }
     }}>
       <Tabs.Screen name='index' options={{
         tabBarLabel: 'Home',
@@ -27,7 +31,11 @@ const _layout = () => {
         headerTitle: 'Camera',
         tabBarLabel: 'Camera',
         tabBarIcon: ({focused, color, size}) => {
-          return <Ionicons name={focused ? 'camera' : 'camera-outline'} color={color} size={size} />
+          return (
+            <View style={{backgroundColor: '#79FF62', padding: 12, position: 'absolute', bottom: 4, borderRadius: 10, borderColor: 'black', borderWidth: 2}}>
+              <Ionicons name={focused ? 'camera' : 'camera-outline'} color={'black'} size={size} />
+            </View>
+          )
         }
       }}/>
       <Tabs.Screen name='gemini' options={{

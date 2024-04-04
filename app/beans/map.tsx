@@ -1,18 +1,17 @@
 import { View, Text } from 'react-native'
 import React from 'react'
-import { Stack, useLocalSearchParams } from 'expo-router'
+import { Stack } from 'expo-router'
 
 const Page = () => {
-  const { id } = useLocalSearchParams();
   return (
     <View>
       <Stack.Screen 
         options={{
-          headerTitle: 'News',
+          headerTitle: 'Bean Map',
           headerBackTitle: 'Back'
         }}
       />
-      <Text>News Page at {id}</Text>
+      <Text>Map Page</Text>
     </View>
   )
 }

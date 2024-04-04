@@ -15,14 +15,19 @@ const _layout = () => {
     }}>
       <Tabs.Screen name='index' options={{
         tabBarLabel: 'Home',
-        headerShown: false,
+        headerTitle: 'MrBean - All Effort for Greenier Days',
         tabBarIcon: ({focused, color, size}) => {
           return <Ionicons name={focused ? 'home' : 'home-outline'} color={color} size={size} />
         }
       }}/>
       <Tabs.Screen name='market' options={{
         tabBarLabel: 'Market',
-        headerShown: false,
+        headerTitle: 'Buying Greens, Living Green',
+        headerStyle: {
+          backgroundColor: '#79FF62',
+          borderBottomColor: 'black',
+          borderBottomWidth: 2
+        },
         tabBarIcon: ({focused, color, size}) => {
           return <MaterialCommunityIcons name={focused ? 'coffee' : 'coffee-outline'} color={color} size={size} />
         }

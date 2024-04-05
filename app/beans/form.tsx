@@ -8,6 +8,10 @@ const Page = () => {
       <Stack.Screen 
         options={{
           headerTitle: 'Bean Form',
+          headerTitleStyle: {
+            fontFamily: 'Coolvetica',
+            fontSize: 20
+          },
           headerBackTitle: 'Back'
         }}
       />

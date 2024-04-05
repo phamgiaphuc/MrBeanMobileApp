@@ -1,8 +1,10 @@
+import { Ionicons } from '@expo/vector-icons';
 import FontAwesome from '@expo/vector-icons/FontAwesome';
 import { useFonts } from 'expo-font';
-import { Stack } from 'expo-router';
+import { Stack, useRouter } from 'expo-router';
 import * as SplashScreen from 'expo-splash-screen';
 import { useEffect } from 'react';
+import { TouchableOpacity } from 'react-native';
 
 export {
   // Catch any errors thrown by the Layout component.
@@ -43,9 +45,25 @@ export default function RootLayout() {
 }
 
 function RootLayoutNav() {
+  const router = useRouter();
   return (
     <Stack>
       <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
+      <Stack.Screen name="(modals)/beanLocations" options={{ 
+        title: 'Bean Locations',
+        headerTitleStyle: {
+          fontFamily: 'Coolvetica',
+          fontSize: 20
+        },
+        presentation: 'modal',
+        headerLeft: () => {
+          return (
+            <TouchableOpacity onPress={() => router.back()}>
+              <Ionicons name="close" size={24} color="black" />
+            </TouchableOpacity>
+          )
+        }
+      }}/>
     </Stack>
   );
 }

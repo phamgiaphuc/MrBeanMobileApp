@@ -1,4 +1,4 @@
-import { View, Text } from 'react-native';
+import { ScrollView } from 'react-native';
 import React from 'react';
 import BasicInfo from '@/components/user/BasicInfo';
 import CGcontributed from '@/components/user/CGcontributed';
@@ -7,7 +7,7 @@ import RecyclingProducts from '@/components/user/RecyclingProducts';
 
 const Page = () => {
   return (
-    <View style={{ margin: 10 }}>
+    <ScrollView style={{ margin: 10 }}>
       <BasicInfo avatarSource={require('@/assets/images/avatar/img.png')} name={'Thành Danh'} />
       <CGcontributed contributed="100" earned="0.2" times="30" />
       <ExchangeMap mapSource={require('@/assets/images/map/map.png')} />
@@ -21,7 +21,7 @@ const Page = () => {
           require('@/assets/images/products/6.png'),
         ]}
       />
-    </View>
+    </ScrollView>
   );
 };
 

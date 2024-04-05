@@ -146,7 +146,8 @@ const styles = StyleSheet.create({
     marginTop: 15,
     marginBottom: 5,
     marginLeft: 10, 
-    textAlign: 'left'
+    textAlign: 'left',
+    fontFamily: 'Coolvetica'
   }
 })
 

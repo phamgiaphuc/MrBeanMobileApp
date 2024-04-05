@@ -1,11 +1,15 @@
+import { useRouter } from "expo-router";
 import React from "react";
-import {View, Text, StyleSheet, Image} from 'react-native';
+import {Text, StyleSheet, Image, TouchableOpacity, View} from 'react-native';
 
 const ExchangeMap = ({mapSource}: {mapSource: any}) => {
+    const router = useRouter();
     return (
         <View style={{alignItems: 'center', justifyContent: 'center', marginTop: 10}}>
             <Text style={styles.text}>Nearby Exchange Partners</Text>
-            <Image source={mapSource} style={styles.mapimg} />
+            <TouchableOpacity onPress={() => router.push('/beans/map')}>
+                <Image source={mapSource} style={styles.mapimg} />
+            </TouchableOpacity>
         </View>
     )
 }

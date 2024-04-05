@@ -1,3 +1,4 @@
+import { imageColors } from '@/constants/Colors';
 import React from 'react';
 import { View, Text, Image, StyleSheet } from 'react-native';
 
@@ -19,7 +20,7 @@ const styles = StyleSheet.create({
     height: 78,
     borderRadius: 50,
     marginRight: 5,
-    borderColor: '#79FF62',
+    borderColor: imageColors.primary,
     borderWidth: 2,
   },
   name: {

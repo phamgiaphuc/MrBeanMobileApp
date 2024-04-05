@@ -1,4 +1,4 @@
-import { View, Text, FlatList, SafeAreaView, Image, TouchableHighlight, TouchableOpacity, ScrollView } from 'react-native'
+import { View, Text, FlatList, SafeAreaView, Image, TouchableHighlight, TouchableOpacity, ScrollView, StyleSheet } from 'react-native'
 import React from 'react'
 import { AntDesign } from '@expo/vector-icons'
 import { useRouter } from 'expo-router'
@@ -116,19 +116,34 @@ const Page = () => {
   return (
     <ScrollView style={{margin: 10}}>
       <Text style={{fontSize: 24, fontWeight: 'bold', marginTop: 10, marginLeft: 10, textAlign: 'left'}}>Coffee Products</Text>
-      <FlatList contentContainerStyle={{gap: 10, marginVertical: 10, paddingBottom: 10}} columnWrapperStyle={{gap: 10, marginRight: 10}} numColumns={2} keyExtractor={(item) => item.id} data={coffeeProducts} renderItem={({item}) => (
-        <ProductCard key={item.id} item={item} />
-      )}/>
+      <View style={styles.container}>
+        {
+          coffeeProducts.map((item) => <ProductCard key={item.id} item={item} />)
+        }
+      </View>
       <Text style={{fontSize: 24, fontWeight: 'bold', marginTop: 10, marginLeft: 10, textAlign: 'left'}}>Starbucks Products</Text>
-      <FlatList contentContainerStyle={{gap: 10, marginVertical: 10, paddingBottom: 10}} columnWrapperStyle={{gap: 10, marginRight: 10}} numColumns={2} keyExtractor={(item) => item.id} data={starbucksProducts} renderItem={({item}) => (
-        <ProductCard key={item.id} item={item} />
-      )}/>
+      <View style={styles.container}>
+        {
+          starbucksProducts.map((item) => <ProductCard key={item.id} item={item} />)
+        }
+      </View>
       <Text style={{fontSize: 24, fontWeight: 'bold', marginTop: 10, marginLeft: 10, textAlign: 'left'}}>Highlands Products</Text>
-      <FlatList contentContainerStyle={{gap: 10, marginVertical: 10, paddingBottom: 10}} columnWrapperStyle={{gap: 10, marginRight: 10}} numColumns={2} keyExtractor={(item) => item.id} data={highlansProducts} renderItem={({item}) => (
-        <ProductCard key={item.id} item={item} />
-      )}/>
+      <View style={styles.container}>
+        {
+          highlansProducts.map((item) => <ProductCard key={item.id} item={item} />)
+        }
+      </View>
     </ScrollView>
   )
 }
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    alignContent: 'flex-start',
+  }
+})
 
 export default Page

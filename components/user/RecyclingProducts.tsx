@@ -33,6 +33,7 @@ const styles = StyleSheet.create({
         fontSize: 20,
         fontStyle: 'normal',
         fontWeight: '800',
+        marginVertical: 10
     },
     image: {
         width: 100,

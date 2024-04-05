@@ -32,8 +32,7 @@ const Page = () => {
   ]
 
   return (
-    <View style={{marginTop: 64}}>
-      <Text style={{fontSize: 20, fontWeight: '600', marginHorizontal: 10, marginBottom: 10, textAlign: 'center'}}>MrBean - All Effort for Greenier Days</Text>
+    <View>
       <ScrollView>
         <AdsCarousel />
         <Text style={{fontSize: 24, fontWeight: 'bold', marginVertical: 10, marginLeft: 20, textAlign: 'left'}}>Choose service</Text>
@@ -48,15 +47,15 @@ const Page = () => {
           }
         </View>
         <Text style={{fontSize: 24, fontWeight: 'bold', marginVertical: 10, marginLeft: 20, textAlign: 'left'}}>Latest news</Text>
-        <View style={{display: 'flex', flexDirection: 'column', marginHorizontal: 10, gap: 10}}>
+        <View style={{display: 'flex', flexDirection: 'column', marginHorizontal: 10, gap: 10, marginBottom: 10}}>
           {
             Array(5).fill(0).map((_, index) => {
               return (
-                <TouchableOpacity onPress={() => router.push(`/news/${index}`)} key={index} style={{display: 'flex', flexDirection: 'row', padding: 4, borderRadius: 10, borderColor: 'black', borderWidth: 2, gap: 10}}>
+                <TouchableOpacity onPress={() => router.push(`/news/${index}`)} key={index} style={{display: 'flex', flexDirection: 'row', padding: 5, borderRadius: 10, borderColor: 'black', borderWidth: 2, gap: 10}}>
                   <Image source={{uri: 'https://assets.epicurious.com/photos/63e54a0664e14d52936a2937/4:3/w_3764,h_2823,c_limit/CoffeeSubscriptions_IG_V1_030922_6350_V1_final.jpg'}} style={{aspectRatio: 1, width: 128, borderRadius: 8}}/>
                   <View style={{display: 'flex', justifyContent: 'space-evenly', flex: 1}}>
                     <Text style={{fontSize: 20, fontWeight: 'bold'}}>Farmers profit on record coffee bean prices</Text>
-                    <Text style={{fontSize: 16}}>January 18, 2024</Text>
+                    <Text style={{fontSize: 14}}>January 18, 2024</Text>
                   </View>
                 </TouchableOpacity>
               )

@@ -1,7 +1,5 @@
-import { View, Text, FlatList, SafeAreaView, Image, TouchableHighlight, TouchableOpacity, ScrollView, StyleSheet } from 'react-native'
+import { View, Text, ScrollView, StyleSheet } from 'react-native'
 import React from 'react'
-import { AntDesign } from '@expo/vector-icons'
-import { useRouter } from 'expo-router'
 import ProductCard from '@/components/markets/ProductCard'
 
 const Page = () => {
@@ -111,23 +109,21 @@ const Page = () => {
     }
   ]
 
-  const router = useRouter();
-
   return (
-    <ScrollView style={{margin: 10}}>
-      <Text style={{fontSize: 24, fontWeight: 'bold', marginTop: 10, marginLeft: 10, textAlign: 'left'}}>Coffee Products</Text>
+    <ScrollView style={{paddingHorizontal: 10}} showsVerticalScrollIndicator={false}>
+      <Text style={styles.brandStyle}>Coffee Products</Text>
       <View style={styles.container}>
         {
           coffeeProducts.map((item) => <ProductCard key={item.id} item={item} />)
         }
       </View>
-      <Text style={{fontSize: 24, fontWeight: 'bold', marginTop: 10, marginLeft: 10, textAlign: 'left'}}>Starbucks Products</Text>
+      <Text style={styles.brandStyle}>Starbucks Products</Text>
       <View style={styles.container}>
         {
           starbucksProducts.map((item) => <ProductCard key={item.id} item={item} />)
         }
       </View>
-      <Text style={{fontSize: 24, fontWeight: 'bold', marginTop: 10, marginLeft: 10, textAlign: 'left'}}>Highlands Products</Text>
+      <Text style={styles.brandStyle}>Highlands Products</Text>
       <View style={styles.container}>
         {
           highlansProducts.map((item) => <ProductCard key={item.id} item={item} />)
@@ -143,6 +139,15 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     flexWrap: 'wrap',
     alignContent: 'flex-start',
+  },
+  brandStyle: {
+    fontSize: 24, 
+    fontWeight: 'bold', 
+    marginTop: 15,
+    marginBottom: 5,
+    marginLeft: 10, 
+    textAlign: 'left',
+    fontFamily: 'Coolvetica'
   }
 })
 

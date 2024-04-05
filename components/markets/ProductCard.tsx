@@ -17,7 +17,7 @@ const ProductCard = ({item}: ProductCardProps) => {
         <View style={{padding: 10, gap: 5}}>
           <Text numberOfLines={1} style={{fontSize: 16}}>{item.title}</Text>
           <View style={{flexDirection: 'row', alignItems: 'flex-end'}}>
-            <Text style={{fontSize: 20, fontWeight: 'bold'}}>${item.price}</Text>
+            <Text style={{fontSize: 24, fontFamily: 'Coolvetica'}}>${item.price}</Text>
             <Text style={{fontSize: 14}}>/{item.type || 'piece'}</Text>
           </View>
           <View style={{flexDirection: 'row', gap: 2}}>

@@ -1,17 +1,14 @@
-import { View, Text } from 'react-native'
-import React from 'react'
-import { Stack } from 'expo-router'
+import { View, Text } from 'react-native';
+import React from 'react';
+import { Stack } from 'expo-router';
+import ProfileAvatar from '@/components/setting/ProfileAvatar';
+import DetailsInfo from '@/components/setting/DetailsInfo';
 
 const Page = () => {
   return (
-    <View>
-      <Stack.Screen 
-        options={{
-          headerTitle: 'Settings',
-          headerBackTitle: 'Back'
-        }}
-      />
-      <Text>Settings Page</Text>
+    <View style={{alignItems: 'center', justifyContent: 'center'}}>
+      <ProfileAvatar avatarSource={require('@/assets/images/avatar/img.png')} />
+      <DetailsInfo />
     </View>
   )
 }

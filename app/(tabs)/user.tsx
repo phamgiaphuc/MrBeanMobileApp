@@ -7,7 +7,7 @@ import RecyclingProducts from '@/components/user/RecyclingProducts';
 
 const Page = () => {
   return (
-    <ScrollView style={{ margin: 10 }}>
+    <ScrollView style={{ paddingHorizontal: 10 }}>
       <BasicInfo avatarSource={require('@/assets/images/avatar/img.png')} name={'Thành Danh'} />
       <CGcontributed contributed="100" earned="0.2" times="30" />
       <ExchangeMap mapSource={require('@/assets/images/map/map.png')} />

@@ -110,7 +110,7 @@ const Page = () => {
   ]
 
   return (
-    <ScrollView style={{marginHorizontal: 10}}>
+    <ScrollView style={{paddingHorizontal: 10}} showsVerticalScrollIndicator={false}>
       <Text style={styles.brandStyle}>Coffee Products</Text>
       <View style={styles.container}>
         {

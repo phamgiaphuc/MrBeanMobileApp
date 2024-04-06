@@ -7,6 +7,7 @@ export const markers = [
     longitudeDelta: 0.005,
     name: 'International University',
     type: 'school',
+    image: require(`../assets/images/brands/iu-logo.png`),
     address: 'Quarter 6, Thu Duc City, Ho Chi Minh City'
   },
   {
@@ -17,6 +18,7 @@ export const markers = [
     longitudeDelta: 0.005,
     name: 'Highlands Cau Bong',
     type: 'highlands',
+    image: require(`../assets/images/brands/highlands.png`),
     address: '45A Hoa Lan, Ward 7, Phu Nhuan, Ho Chi Minh City'
   },
   {
@@ -27,6 +29,7 @@ export const markers = [
     longitudeDelta: 0.005,
     name: 'Highlands Dien Bien Phu',
     type: 'highlands',
+    image: require(`../assets/images/brands/highlands.png`),
     address: '45A Hoa Lan, Ward 7, Phu Nhuan, Ho Chi Minh City'
   },
   {
@@ -37,6 +40,7 @@ export const markers = [
     longitudeDelta: 0.005,
     name: 'Highlands Landmark 81',
     type: 'highlands',
+    image: require(`../assets/images/brands/highlands.png`),
     address: '45A Hoa Lan, Ward 7, Phu Nhuan, Ho Chi Minh City'
   },
   {
@@ -47,6 +51,7 @@ export const markers = [
     longitudeDelta: 0.005,
     name: 'Highlands Tran Nao',
     type: 'highlands',
+    image: require(`../assets/images/brands/highlands.png`),
     address: '45A Hoa Lan, Ward 7, Phu Nhuan, Ho Chi Minh City'
   },
   {
@@ -57,6 +62,7 @@ export const markers = [
     longitudeDelta: 0.005,
     name: 'Starbucks Phan Xich Long',
     type: 'starbucks',
+    image: require(`../assets/images/brands/starbucks.png`),
     address: '45A Hoa Lan, Ward 7, Phu Nhuan, Ho Chi Minh City'
   },
   {
@@ -67,6 +73,7 @@ export const markers = [
     longitudeDelta: 0.005,
     name: 'Starbucks Coffee New World',
     type: 'starbucks',
+    image: require(`../assets/images/brands/starbucks.png`),
     address: '45A Hoa Lan, Ward 7, Phu Nhuan, Ho Chi Minh City'
   },
   {
@@ -77,6 +84,7 @@ export const markers = [
     longitudeDelta: 0.005,
     name: 'Starbucks Estella',
     type: 'starbucks',
+    image: require(`../assets/images/brands/starbucks.png`),
     address: '45A Hoa Lan, Ward 7, Phu Nhuan, Ho Chi Minh City'
   }
 ]

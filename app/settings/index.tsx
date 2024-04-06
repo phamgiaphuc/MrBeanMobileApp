@@ -3,6 +3,7 @@ import React from 'react';
 import { Stack } from 'expo-router';
 import ProfileAvatar from '@/components/setting/ProfileAvatar';
 import DetailsInfo from '@/components/setting/DetailsInfo';
+import BackButton from '@/components/buttons/BackButton';
 
 const Page = () => {
   return (
@@ -10,7 +11,9 @@ const Page = () => {
       <Stack.Screen 
         options={{
           headerTitle: 'Settings',
-          headerBackTitle: 'Back'
+          headerLeft: () => {
+            return <BackButton />
+          }
         }}
       />
       <ProfileAvatar avatarSource={require('@/assets/images/avatar/img.png')} />

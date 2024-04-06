@@ -7,6 +7,7 @@ export const markers = [
     longitudeDelta: 0.005,
     name: 'International University',
     type: 'school',
+    image: require(`../assets/images/brands/iu-logo.png`),
     address: 'Quarter 6, Thu Duc City, Ho Chi Minh City'
   },
   {
@@ -17,7 +18,8 @@ export const markers = [
     longitudeDelta: 0.005,
     name: 'Highlands Cau Bong',
     type: 'highlands',
-    address: '45A Hoa Lan, Ward 7, Phu Nhuan, Ho Chi Minh City'
+    image: require(`../assets/images/brands/highlands.png`),
+    address: '45A Hoa Lan Street, Ward 7, Phu Nhuan District, Ho Chi Minh City'
   },
   {
     id: 3,
@@ -27,7 +29,8 @@ export const markers = [
     longitudeDelta: 0.005,
     name: 'Highlands Dien Bien Phu',
     type: 'highlands',
-    address: '45A Hoa Lan, Ward 7, Phu Nhuan, Ho Chi Minh City'
+    image: require(`../assets/images/brands/highlands.png`),
+    address: '419 Dien Bien Phu Street, Ward 25, Binh Thanh District, Ho Chi Minh City'
   },
   {
     id: 4,
@@ -37,7 +40,8 @@ export const markers = [
     longitudeDelta: 0.005,
     name: 'Highlands Landmark 81',
     type: 'highlands',
-    address: '45A Hoa Lan, Ward 7, Phu Nhuan, Ho Chi Minh City'
+    image: require(`../assets/images/brands/highlands.png`),
+    address: 'Vinhomes Tan Cang, Binh Thanh District, Ho Chi Minh City'
   },
   {
     id: 5,
@@ -47,7 +51,8 @@ export const markers = [
     longitudeDelta: 0.005,
     name: 'Highlands Tran Nao',
     type: 'highlands',
-    address: '45A Hoa Lan, Ward 7, Phu Nhuan, Ho Chi Minh City'
+    image: require(`../assets/images/brands/highlands.png`),
+    address: '41 Tran Nao Street, Binh An Ward, District 2, Ho Chi Minh City'
   },
   {
     id: 6,
@@ -57,7 +62,8 @@ export const markers = [
     longitudeDelta: 0.005,
     name: 'Starbucks Phan Xich Long',
     type: 'starbucks',
-    address: '45A Hoa Lan, Ward 7, Phu Nhuan, Ho Chi Minh City'
+    image: require(`../assets/images/brands/starbucks.png`),
+    address: '214-216 Phan Xich Long Street, Ward 7, Phu Nhuan District, Ho Chi Minh City 70000'
   },
   {
     id: 7,
@@ -67,7 +73,8 @@ export const markers = [
     longitudeDelta: 0.005,
     name: 'Starbucks Coffee New World',
     type: 'starbucks',
-    address: '45A Hoa Lan, Ward 7, Phu Nhuan, Ho Chi Minh City'
+    image: require(`../assets/images/brands/starbucks.png`),
+    address: 'New World Saigon Hotel, 76 Nguyen Thi Nghia Street, District 1, Ho Chi Minh City'
   },
   {
     id: 8,
@@ -77,6 +84,7 @@ export const markers = [
     longitudeDelta: 0.005,
     name: 'Starbucks Estella',
     type: 'starbucks',
-    address: '45A Hoa Lan, Ward 7, Phu Nhuan, Ho Chi Minh City'
+    image: require(`../assets/images/brands/starbucks.png`),
+    address: '88 Song Hanh Street, An Phu Ward, District 2, Ho Chi Minh City'
   }
 ]

@@ -6,5 +6,6 @@ export type LocationProps = {
   longitudeDelta: number,
   name: string,
   type: string,
+  image: string,
   address: string
 }

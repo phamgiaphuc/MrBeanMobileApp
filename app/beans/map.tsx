@@ -57,7 +57,7 @@ const Page = () => {
         ))}
       </MapView>
       {location && (
-        <View style={{ backgroundColor: 'white', padding: 10, flexDirection: 'row', gap: 8 }}>
+        <View style={{ backgroundColor: 'white', padding: 10, flexDirection: 'row', gap: 8, justifyContent: 'center', alignItems: 'center'}}>
           <Image source={location?.image as ImageProps} style={{ width: 56, height: 56 }} resizeMode='contain'/>
           <View style={{ gap: 5, justifyContent: 'center' ,flex: 1}}>
             <Text style={{ fontSize: 20, fontFamily: 'Coolvetica' }}>{location?.name}</Text>

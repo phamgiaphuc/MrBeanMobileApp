@@ -16,7 +16,7 @@ const beanLocations = () => {
     <View>
       <FlatList data={markers} keyExtractor={(item) => item.id.toString()} renderItem={({item}) => {
         return (
-          <TouchableOpacity onPress={() => onLocationPressed(item)} style={{padding: 10, borderBottomColor: 'gray', marginVertical: 10, flexDirection: 'row', gap: 8}}>
+          <TouchableOpacity onPress={() => onLocationPressed(item)} style={{padding: 10, borderBottomColor: 'gray', marginVertical: 10, flexDirection: 'row', gap: 8, justifyContent: 'center', alignItems: 'center'}}>
             <Image source={item.image} style={{width: 56, height: 56}} resizeMode='contain'/>
             <View style={{gap: 5, justifyContent: 'center', flex: 1}}>
               <Text style={{fontSize: 20, fontFamily: 'Coolvetica'}}>{item.name}</Text>

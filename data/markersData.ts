@@ -19,7 +19,7 @@ export const markers = [
     name: 'Highlands Cau Bong',
     type: 'highlands',
     image: require(`../assets/images/brands/highlands.png`),
-    address: '45A Hoa Lan, Ward 7, Phu Nhuan, Ho Chi Minh City'
+    address: '45A Hoa Lan Street, Ward 7, Phu Nhuan District, Ho Chi Minh City'
   },
   {
     id: 3,
@@ -30,7 +30,7 @@ export const markers = [
     name: 'Highlands Dien Bien Phu',
     type: 'highlands',
     image: require(`../assets/images/brands/highlands.png`),
-    address: '45A Hoa Lan, Ward 7, Phu Nhuan, Ho Chi Minh City'
+    address: '419 Dien Bien Phu Street, Ward 25, Binh Thanh District, Ho Chi Minh City'
   },
   {
     id: 4,
@@ -41,7 +41,7 @@ export const markers = [
     name: 'Highlands Landmark 81',
     type: 'highlands',
     image: require(`../assets/images/brands/highlands.png`),
-    address: '45A Hoa Lan, Ward 7, Phu Nhuan, Ho Chi Minh City'
+    address: 'Vinhomes Tan Cang, Binh Thanh District, Ho Chi Minh City'
   },
   {
     id: 5,
@@ -52,7 +52,7 @@ export const markers = [
     name: 'Highlands Tran Nao',
     type: 'highlands',
     image: require(`../assets/images/brands/highlands.png`),
-    address: '45A Hoa Lan, Ward 7, Phu Nhuan, Ho Chi Minh City'
+    address: '41 Tran Nao Street, Binh An Ward, District 2, Ho Chi Minh City'
   },
   {
     id: 6,
@@ -63,7 +63,7 @@ export const markers = [
     name: 'Starbucks Phan Xich Long',
     type: 'starbucks',
     image: require(`../assets/images/brands/starbucks.png`),
-    address: '45A Hoa Lan, Ward 7, Phu Nhuan, Ho Chi Minh City'
+    address: '214-216 Phan Xich Long Street, Ward 7, Phu Nhuan District, Ho Chi Minh City 70000'
   },
   {
     id: 7,
@@ -74,7 +74,7 @@ export const markers = [
     name: 'Starbucks Coffee New World',
     type: 'starbucks',
     image: require(`../assets/images/brands/starbucks.png`),
-    address: '45A Hoa Lan, Ward 7, Phu Nhuan, Ho Chi Minh City'
+    address: 'New World Saigon Hotel, 76 Nguyen Thi Nghia Street, District 1, Ho Chi Minh City'
   },
   {
     id: 8,
@@ -85,6 +85,6 @@ export const markers = [
     name: 'Starbucks Estella',
     type: 'starbucks',
     image: require(`../assets/images/brands/starbucks.png`),
-    address: '45A Hoa Lan, Ward 7, Phu Nhuan, Ho Chi Minh City'
+    address: '88 Song Hanh Street, An Phu Ward, District 2, Ho Chi Minh City'
   }
 ]

@@ -1,23 +1,26 @@
-import { View, StyleSheet, Alert, TouchableOpacity } from 'react-native'
-import React, { useRef } from 'react'
+import { View, StyleSheet, Alert, TouchableOpacity, Text } from 'react-native'
+import React, { useContext, useEffect, useRef } from 'react'
 import { Stack, useRouter } from 'expo-router'
 import MapView, { Marker, PROVIDER_GOOGLE } from 'react-native-maps'
 import { Entypo } from '@expo/vector-icons'
 import { markers } from '@/data/markersData'
+import { AppContext } from '@/contexts/AppContextProvider'
 
-const INITIAL_REGION = {
-  latitude: 10.877884,
-  longitude: 106.801526,
-  latitudeDelta: 2,
-  longitudeDelta: 2
-}
+const INITIAL_LOCATION = markers[0];
 
 const Page = () => {
-  const mapRef = useRef(null);
+  const { beanLocation } = useContext(AppContext);
+  const mapRef = useRef<any>(null);
   const router = useRouter();
   const onMarkerSelected = (location: any) => {
     Alert.alert(location.name)
-  } 
+  }
+
+  useEffect(() => {
+    if (beanLocation) {
+      mapRef.current?.animateToRegion(beanLocation);
+    }
+  }, [beanLocation]);
 
   return (
     <View style={{flex: 1}}>
@@ -31,7 +34,7 @@ const Page = () => {
           headerBackTitle: 'Back'
         }}
       />
-      <MapView ref={mapRef} style={StyleSheet.absoluteFill} provider={PROVIDER_GOOGLE} initialRegion={INITIAL_REGION} showsUserLocation showsMyLocationButton>
+      <MapView ref={mapRef} style={StyleSheet.absoluteFill} provider={PROVIDER_GOOGLE} initialRegion={INITIAL_LOCATION} showsUserLocation showsMyLocationButton>
         {
           markers.map((location) => (
             <Marker key={location.id} coordinate={location} onPress={() => onMarkerSelected(location)}/>

@@ -1,9 +1,10 @@
+import AppContextProvider from '@/contexts/AppContextProvider';
 import { Ionicons } from '@expo/vector-icons';
 import FontAwesome from '@expo/vector-icons/FontAwesome';
 import { useFonts } from 'expo-font';
 import { Stack, useRouter } from 'expo-router';
 import * as SplashScreen from 'expo-splash-screen';
-import { useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { TouchableOpacity } from 'react-native';
 
 export {
@@ -41,7 +42,11 @@ export default function RootLayout() {
     return null;
   }
 
-  return <RootLayoutNav />;
+  return (
+    <AppContextProvider>
+      <RootLayoutNav />
+    </AppContextProvider>
+  )
 }
 
 function RootLayoutNav() {

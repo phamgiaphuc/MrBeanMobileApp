@@ -1,8 +1,8 @@
 import React, { useState, useRef } from 'react';
-import { View, Text, Button, TextInput, ScrollView, StyleSheet, ActivityIndicator } from 'react-native';
+import { View, Text, TextInput, ScrollView, StyleSheet, ActivityIndicator } from 'react-native';
 import { GoogleGenerativeAI } from '@google/generative-ai';
 import { TouchableOpacity } from 'react-native';
-import { green } from 'react-native-reanimated/lib/typescript/reanimated2/Colors';
+import { btnColors } from '@/constants/Colors';
 
 const Page = () => {
   const [messages, setMessages] = useState<{ sender: string; text: string; }[]>([]);
@@ -51,7 +51,7 @@ const Page = () => {
         {loading && <ActivityIndicator style={styles.spinner} />}
         <View>
         <TouchableOpacity style={styles.msgBtn} onPress={run}>
-        <Text style={{fontSize: 20, color: "white"}} >Send</Text>
+        <Text style={{fontSize: 18, fontFamily: 'Coolvetica', color: "white"}} >Send</Text>
         </TouchableOpacity>
         </View>
       </View>
@@ -62,7 +62,7 @@ const Page = () => {
 
 const styles = StyleSheet.create({
   msgBtn: {
-    backgroundColor: '#ccc',
+    backgroundColor: btnColors.primary,
     padding: 5,
     borderRadius: 10,
     borderWidth: 2,
@@ -101,6 +101,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     marginTop: 16,
     position: 'relative',
+    marginBottom: 8
   },
   input: {
     flex: 1,
@@ -109,6 +110,7 @@ const styles = StyleSheet.create({
     borderRadius: 8,
     padding: 8,
     marginRight: 8,
+    height: '100%',
   },
   spinner: {
     position: 'absolute',

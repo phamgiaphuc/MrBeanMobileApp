@@ -9,7 +9,7 @@ const Page = () => {
   return (
     <ScrollView style={{ paddingHorizontal: 10 }}>
       <BasicInfo avatarSource={require('@/assets/images/avatar/img.png')} name={'Thành Danh'} />
-      <CGcontributed contributed="100" earned="0.2" times="30" />
+      <CGcontributed contributed="100" earned="0.25" times="30" />
       <ExchangeMap mapSource={require('@/assets/images/map/map.png')} />
       <RecyclingProducts
         productImgSource={[

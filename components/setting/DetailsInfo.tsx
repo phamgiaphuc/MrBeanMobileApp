@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Image, Text, Pressable, StyleSheet } from 'react-native';
+import { View, Text, StyleSheet } from 'react-native';
 import { MaterialIcons } from '@expo/vector-icons';
 
 const DetailsInfo = () => {
@@ -17,7 +17,7 @@ const DetailsInfo = () => {
       </View>
       <View style={styles.container_1}>
         <Text style={styles.container_2}>Email</Text>
-        <Text style={styles.container_3}>name@domain.com</Text>
+        <Text style={styles.container_3}>thanhdanh@mail.com</Text>
         <MaterialIcons name="keyboard-arrow-right" size={20} color="#828282" />
       </View>
       <View
@@ -31,20 +31,17 @@ const DetailsInfo = () => {
         }}
       >
         <Text style={styles.container_2}>Links</Text>
-        <View style={{}}>
-          <Text style={styles.container_4}>website.net</Text>
-          <Text style={styles.container_4}>mylink.net</Text>
-          <Text style={styles.container_4}>yourlink.net</Text>
+        <View style={{gap: 12}}>
+          <Text style={styles.container_3}>website.net</Text>
+          <Text style={styles.container_3}>mylink.net</Text>
+          <Text style={styles.container_3}>yourlink.net</Text>
           <Text
             style={{
               color: '#828282',
               fontFamily: 'Coolvetica',
-              fontSize: 14,
-              fontStyle: 'normal',
-              fontWeight: '400',
+              fontSize: 14
             }}
           >
-            {' '}
             + Add link
           </Text>
         </View>
@@ -52,7 +49,7 @@ const DetailsInfo = () => {
       </View>
       <View style={styles.container_1}>
         <Text style={styles.container_2}>Bio</Text>
-        <Text style={styles.container_4}>A description of this user.</Text>
+        <Text style={styles.container_3}>A description of this user.</Text>
         <MaterialIcons name="keyboard-arrow-right" size={20} color="#828282" />
       </View>
     </View>
@@ -68,31 +65,17 @@ const styles = StyleSheet.create({
     width: 375,
     alignItems: 'center',
     justifyContent: 'center',
-    // backgroundColor: 'blue'
   },
   container_2: {
     width: 100,
     color: '#000',
     fontFamily: 'Coolvetica',
-    fontSize: 14,
-    fontStyle: 'normal',
-    fontWeight: '800',
+    fontSize: 16
   },
   container_3: {
     width: 211,
     color: '#000',
     fontFamily: 'Coolvetica',
-    fontSize: 14,
-    fontStyle: 'normal',
-    fontWeight: '400',
-  },
-  container_4: {
-    width: 211,
-    color: '#000',
-    fontFamily: 'Coolvetica',
-    fontSize: 14,
-    fontStyle: 'normal',
-    fontWeight: '800',
-    marginBottom: 12,
-  },
+    fontSize: 16
+  }
 });

@@ -16,6 +16,10 @@ const _layout = () => {
       <Tabs.Screen name='index' options={{
         tabBarLabel: 'Home',
         headerTitle: 'MrBean - All Effort for Greenier Days',
+        headerTitleStyle: {
+          fontFamily: 'Coolvetica',
+          fontSize: 20
+        },
         tabBarIcon: ({focused, color, size}) => {
           return <Ionicons name={focused ? 'home' : 'home-outline'} color={color} size={size} />
         }
@@ -23,6 +27,10 @@ const _layout = () => {
       <Tabs.Screen name='market' options={{
         tabBarLabel: 'Market',
         headerTitle: 'Buying Greens, Living Green',
+        headerTitleStyle: {
+          fontFamily: 'Coolvetica',
+          fontSize: 20
+        },
         headerStyle: {
           backgroundColor: '#79FF62',
           borderBottomColor: 'black',
@@ -34,6 +42,10 @@ const _layout = () => {
       }}/>
       <Tabs.Screen name='camera' options={{
         headerTitle: 'Camera',
+        headerTitleStyle: {
+          fontFamily: 'Coolvetica',
+          fontSize: 20
+        },
         tabBarLabel: 'Camera',
         tabBarIcon: ({focused, color, size}) => {
           return (
@@ -45,6 +57,10 @@ const _layout = () => {
       }}/>
       <Tabs.Screen name='gemini' options={{
         headerTitle: 'Gemini AI',
+        headerTitleStyle: {
+          fontFamily: 'Coolvetica',
+          fontSize: 20
+        },
         tabBarLabel: 'Gemini',
         tabBarIcon: ({focused, color, size}) => {
           return <MaterialCommunityIcons name={focused ? 'account-question' : 'account-question-outline'} color={color} size={size} />
@@ -52,6 +68,10 @@ const _layout = () => {
       }}/>
       <Tabs.Screen name='user' options={{
         headerTitle: 'User profile',
+        headerTitleStyle: {
+          fontFamily: 'Coolvetica',
+          fontSize: 20
+        },
         tabBarLabel: 'User',
         tabBarIcon: ({focused, color, size}) => {
           return <Ionicons name={focused ? 'person' : 'person-outline'} color={color} size={size} />

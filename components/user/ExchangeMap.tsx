@@ -29,7 +29,7 @@ const styles = StyleSheet.create({
     width: 361,
     height: 191,
     borderRadius: 19,
-    borderWidth: 1,
+    borderWidth: 2,
     borderColor: 'black',
   },
 });

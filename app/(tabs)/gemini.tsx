@@ -104,7 +104,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     marginTop: 16,
     position: 'relative',
-    marginBottom: 8
+    marginBottom: 32
   },
   input: {
     flex: 1,

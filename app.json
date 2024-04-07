@@ -16,21 +16,13 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true,
-      "infoPlist": {
-        "NSCameraUsageDescription": "Allow $(PRODUCT_NAME) to access your camera"
-      },
-      "bundleIdentifier": "com.anonymous.MrBeanMobileApp"
+      "supportsTablet": true
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/logos/splash-icon.png",
         "backgroundColor": "#ffffff"
-      },
-      "permissions": [
-        "android.permission.CAMERA"
-      ],
-      "package": "com.anonymous.MrBeanMobileApp"
+      }
     },
     "web": {
       "bundler": "metro",

@@ -1,107 +1,94 @@
-import { markers } from '@/data/markersData';
+import { btnColors } from '@/constants/Colors';
 import { Ionicons } from '@expo/vector-icons';
-import { CameraType, CameraView, useCameraPermissions } from 'expo-camera/next';
-import { useEffect, useState } from 'react';
-import { Button, Image, ImageProps, StyleSheet, Text, View } from 'react-native';
+import React, { useCallback, useState } from 'react';
+import { StyleSheet, Text, TouchableOpacity, View} from 'react-native';
+import CameraScreen from '../camera/camera';
+import QrCodeScreen from '../camera/qrCode';
+import { Stack, useFocusEffect } from 'expo-router';
 
 const Page = () => {
-  const [type, setType] = useState('back');
-  const [permission, requestPermission] = useCameraPermissions();
-  const [scannedValue, setScannedValue] = useState(null);
+  const [type, setType] = useState<string>('');
 
-  // useEffect(() => {
-  //   const timer = setTimeout(() => {
-  //     setScannedValue(null)
-  //   }, 10000);
-  //   return () => clearInterval(timer);
-  // }, [scannedValue]);
-
-
-  if (!permission) {
-    return <View />;
-  }
-
-  if (!permission.granted) {
-    return (
-      <View style={styles.container}>
-        <Text style={{ textAlign: 'center' }}>We need your permission to show the camera</Text>
-        <Button onPress={requestPermission} title="Grant permission" />
-      </View>
-    );
-  }
-
-  const handleBarCodeScanned = ({ data }) => {
-    setScannedValue(data);
-  };
+  useFocusEffect(
+    useCallback(() => {
+      setType('');
+      return () => {};
+    }, [])
+  );
 
   return (
-    <View style={styles.container}>
-      <View style={{ flexDirection: 'row', gap: 5}}>
-        <Ionicons name="qr-code-outline" size={32} color="black" />
-        <Text style={styles.text}>Scan your qr code here</Text>
-      </View>
-      <View style={{ padding: 10, borderColor: 'black', borderWidth: 2 }}>
-        <CameraView
-          style={styles.camera}
-          facing={type as CameraType}
-          zoom={0.025}
-          onBarcodeScanned={handleBarCodeScanned}
-          barcodeScannerSettings={{
-            barcodeTypes: ['qr']
-          }}
-        />
-      </View>
-      {
-        scannedValue 
-        && (
-          markers.map((location) => {
-            if (location.id === +scannedValue) {
+    <View style={{flex: 1}}>
+      <Stack.Screen 
+        options={{
+          headerTitle: () => {
+            if (!type) return <Text style={styles.header_text_style}>Camera mode</Text>;
+            if (type === 'camera') {
+              return <Text style={styles.header_text_style}>Camera</Text>
+            } else {
+              return <Text style={styles.header_text_style}>QR Code</Text>
+            }
+          },
+          headerLeft: () => {
+            if (type) {
               return (
-                <View style={{ backgroundColor: 'white', padding: 10, marginHorizontal: 18, borderColor: 'black', borderWidth: 2, flexDirection: 'row', gap: 8}}>
-                  <Image source={location?.image as ImageProps} style={{ width: 56, height: 56 }} resizeMode='contain'/>
-                  <View style={{ gap: 5, justifyContent: 'center' ,flex: 1}}>
-                    <Text style={{ fontSize: 20, fontFamily: 'Coolvetica' }}>{location?.name}</Text>
-                    <Text numberOfLines={2} style={{ textTransform: 'capitalize' }}>
-                      {location?.address}
-                    </Text>
-                  </View>
-                </View> 
+                <TouchableOpacity onPress={() => setType('')} style={{flexDirection: 'row', justifyContent: 'center', alignItems: 'center'}}>
+                  <Ionicons name="chevron-back-sharp" size={24} color="black" />
+                  <Text style={{ fontSize: 16 }}>Back</Text>
+                </TouchableOpacity>
               )
             }
-          })
+          }
+          }}
+      />
+      {
+        !type && (
+          <View style={styles.btn_container}>
+            <Text style={{fontSize: 16}}>Choose camera mode below</Text>
+            <TouchableOpacity onPress={() => setType('camera')} style={styles.btn_style}>
+              <Ionicons name="camera-outline" size={24} color="white" />
+              <Text style={styles.text_style}>Camera</Text>
+            </TouchableOpacity>
+            <TouchableOpacity onPress={() => setType('qr-code')} style={styles.btn_style}>
+              <Ionicons name="qr-code-outline" size={24} color="white" />
+              <Text style={styles.text_style}>QR Code</Text>
+            </TouchableOpacity>
+          </View>
         )
       }
-    </View>
-  );
+      {type === 'camera' && <CameraScreen />}
+      {type === 'qr-code' && <QrCodeScreen />}
+    </View>  
+  )
 };
 
 const styles = StyleSheet.create({
-  container: {
+  header_text_style: {
+    fontFamily: 'Coolvetica',
+    fontSize: 20
+  },
+  btn_container: {
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
+    padding: 10,
     gap: 10
   },
-  camera: {
-    width: '90%',
-    aspectRatio: 1,
+  btn_style: {
+    backgroundColor: btnColors.primary,
+    borderRadius: 10,
+    width: '75%',
     padding: 10,
-  },
-  buttonContainer: {
-    flex: 1,
+    justifyContent: 'center',
     flexDirection: 'row',
-    backgroundColor: 'transparent',
-    margin: 64,
-  },
-  button: {
-    flex: 1,
-    alignSelf: 'flex-end',
     alignItems: 'center',
+    gap: 5
   },
-  text: {
-    fontSize: 24,
+  text_style: {
+    color: 'white',
+    textAlign: 'center',
     fontFamily: 'Coolvetica',
-  },
+    fontSize: 18
+  }
 });
 
 export default Page;

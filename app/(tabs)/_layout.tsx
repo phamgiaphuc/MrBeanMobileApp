@@ -10,7 +10,7 @@ const _layout = () => {
       tabBarActiveTintColor: 'black',
       tabBarStyle: {
         borderTopColor: 'black',
-        borderTopWidth: 2,
+        borderTopWidth: 2
       }
     }}>
       <Tabs.Screen name='index' options={{

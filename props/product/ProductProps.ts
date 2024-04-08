@@ -4,5 +4,7 @@ export type ProductProps = {
   image: string,
   price: string,
   stars: number,
-  type?: string | 'piece'
+  type?: string | 'piece',
+  brand: string | 'coffee-grounds' | 'starbucks' | 'highlands',
+  isHot: boolean
 }

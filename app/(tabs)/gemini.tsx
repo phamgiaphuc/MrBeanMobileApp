@@ -1,5 +1,5 @@
 import React, { useState, useRef } from 'react';
-import { View, Text, TextInput, ScrollView, StyleSheet, ActivityIndicator } from 'react-native';
+import { View, Text, TextInput, ScrollView, StyleSheet, ActivityIndicator, KeyboardAvoidingView, Platform } from 'react-native';
 import { GoogleGenerativeAI } from '@google/generative-ai';
 import { TouchableOpacity } from 'react-native';
 import { btnColors } from '@/constants/Colors';
@@ -31,7 +31,10 @@ const Page = () => {
   }
 
   return (
-    <View style={styles.container}>
+    <KeyboardAvoidingView
+      style={styles.container}
+      behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
+    >
       <ScrollView contentContainerStyle={styles.messagesContainer}>
         {messages.map((message, index) => (
           <View key={index} style={message.sender === 'user' ? styles.userMessage : styles.aiMessage}>
@@ -50,13 +53,13 @@ const Page = () => {
         />
         {loading && <ActivityIndicator style={styles.spinner} />}
         <View>
-        <TouchableOpacity style={styles.msgBtn} onPress={run}>
-        <Text style={{fontSize: 18, fontFamily: 'Coolvetica', color: "white"}} >Send</Text>
-        </TouchableOpacity>
+          <TouchableOpacity style={styles.msgBtn} onPress={run}>
+            <Text style={{ fontSize: 18, fontFamily: 'Coolvetica', color: "white" }} >Send</Text>
+          </TouchableOpacity>
         </View>
       </View>
       {error ? <Text style={styles.errorText}>{error}</Text> : null}
-    </View>
+    </KeyboardAvoidingView>
   );
 };
 
@@ -101,7 +104,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     marginTop: 16,
     position: 'relative',
-    marginBottom: 8
+    marginBottom: 32
   },
   input: {
     flex: 1,

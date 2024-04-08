@@ -12,7 +12,8 @@ const Page = () => {
     {
       title: 'Give Beans',
       icon: <MaterialCommunityIcons name="leaf" size={24} color="white" />,
-      location: '/beans/form'
+      // location: '/beans/form'
+      location: ''
     },
     {
       title: 'Find Locations',

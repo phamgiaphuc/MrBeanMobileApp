@@ -79,7 +79,7 @@ export const productsData = [
   },
   {
     id: '9',
-    title: 'Starbucks Caffee Dark Roast Dark Roast',
+    title: 'Starbucks Caffee Dark Roast',
     image: 'https://www.starbucksathome.com/vn/sites/default/files/2022-06/Rang%20%C4%91%E1%BA%ADm.png',
     price: '19.99',
     stars: 5,

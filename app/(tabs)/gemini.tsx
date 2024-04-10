@@ -34,6 +34,7 @@ const Page = () => {
     <KeyboardAvoidingView
       style={styles.container}
       behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
+      keyboardVerticalOffset={Platform.OS === 'ios' ? 72 : 0}
     >
       <ScrollView contentContainerStyle={styles.messagesContainer}>
         {messages.map((message, index) => (

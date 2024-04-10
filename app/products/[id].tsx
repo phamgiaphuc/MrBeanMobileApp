@@ -1,4 +1,4 @@
-import { View, Text, Image, TouchableOpacity } from 'react-native'
+import { View, Text, Image, TouchableOpacity, Alert } from 'react-native'
 import React from 'react'
 import { Stack, useLocalSearchParams } from 'expo-router'
 import { productsData } from '@/data/productsData';
@@ -9,6 +9,9 @@ import { btnColors } from '@/constants/Colors';
 const Page = () => {
   const { id } = useLocalSearchParams();
   const product = productsData.find((item) => item.id === id);
+  const onAddCartBtn = () => {
+    Alert.alert(`Added ${product?.title} to the card`);
+  }
   return (
     <View style={{flex: 1}}>
       <Stack.Screen 
@@ -49,7 +52,7 @@ const Page = () => {
             </View>
           </View>
         </View>
-        <TouchableOpacity style={{padding: 10, borderRadius: 10, backgroundColor: btnColors.primary, justifyContent: 'center', alignItems: 'center', gap: 5, flexDirection: 'row', marginTop: 16}}>
+        <TouchableOpacity onPress={() => onAddCartBtn()} style={{padding: 10, borderRadius: 10, backgroundColor: btnColors.primary, justifyContent: 'center', alignItems: 'center', gap: 5, flexDirection: 'row', marginTop: 16}}>
           <Ionicons name="cart-outline" size={24} color="white" />
           <Text style={{color: 'white', fontFamily: 'Coolvetica', fontSize: 18}}>Add to cart</Text>
         </TouchableOpacity>

@@ -13,9 +13,11 @@ const ProductCard = ({item}: ProductCardProps) => {
   return (
     <View style={{maxWidth: '50%'}}>
       <TouchableOpacity onPress={() => router.push(`/products/${item.id}`)} style={{backgroundColor: 'white', borderRadius: 10, borderColor: 'black', margin: 5, borderWidth: 2}}>
-        <Image source={{uri: item.image}} style={{width: '100%', aspectRatio: 1, borderTopRightRadius: 8, borderTopLeftRadius: 8, overflow: 'hidden'}} />
+        <View style={{position: 'relative'}}>
+          <Image source={{uri: item.image}} style={{width: '100%', aspectRatio: 1, borderTopRightRadius: 8, borderTopLeftRadius: 8, overflow: 'hidden'}} />
+          {item.isHot && <Text style={{position: 'absolute', bottom: 0, padding: 5, backgroundColor: '#79FF62'}}>Hot product</Text>}
+        </View>
         <View style={{padding: 10, gap: 5}}>
-          {item.isHot && <Text style={{position: 'absolute', top: -27.1, padding: 5, backgroundColor: '#79FF62'}}>Hot product</Text>}
           <Text numberOfLines={1} style={{fontSize: 16}}>{item.title}</Text>
           <View style={{flexDirection: 'row', alignItems: 'flex-end'}}>
             <Text style={{fontSize: 24, fontFamily: 'Coolvetica'}}>${item.price}</Text>

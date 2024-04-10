@@ -1,6 +1,7 @@
 import { View, Text } from 'react-native'
 import React from 'react'
 import { Stack, useLocalSearchParams } from 'expo-router'
+import BackButton from '@/components/buttons/BackButton';
 
 const Page = () => {
   const { id } = useLocalSearchParams();
@@ -9,7 +10,11 @@ const Page = () => {
       <Stack.Screen 
         options={{
           headerTitle: 'News',
-          headerBackTitle: 'Back'
+          headerTitleStyle: {
+            fontFamily: 'Coolvetica',
+            fontSize: 20
+          },
+          headerLeft: () => <BackButton />
         }}
       />
       <Text>News Page at {id}</Text>

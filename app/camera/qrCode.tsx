@@ -36,7 +36,7 @@ const QrCodeScreen = () => {
         <CameraView
           style={styles.camera}
           facing={type as CameraType}
-          zoom={0.025}
+          zoom={0.015}
           onBarcodeScanned={handleBarCodeScanned}
           barcodeScannerSettings={{
             barcodeTypes: ['qr']
@@ -49,7 +49,7 @@ const QrCodeScreen = () => {
           markers.map((location) => {
             if (location.id === +scannedValue) {
               return (
-                <View style={{ backgroundColor: 'white', padding: 10, marginHorizontal: 18, borderColor: 'black', borderWidth: 2, flexDirection: 'row', gap: 8}}>
+                <View key={location.id} style={{ backgroundColor: 'white', padding: 10, marginHorizontal: 18, borderColor: 'black', borderWidth: 2, flexDirection: 'row', gap: 8}}>
                   <Image source={location?.image as ImageProps} style={{ width: 56, height: 56 }} resizeMode='contain'/>
                   <View style={{ gap: 5, justifyContent: 'center' ,flex: 1}}>
                     <Text style={{ fontSize: 20, fontFamily: 'Coolvetica' }}>{location?.name}</Text>
